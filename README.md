@@ -190,14 +190,15 @@ The frontend will run on `http://localhost:5173`
 2. Go to [Render.com](https://render.com)
 3. Click "New +" and select "Web Service"
 4. Connect your GitHub repository
-5. Set up environment variables:
+5. Set the Root Directory to `backend`
+6. Set up environment variables:
    - `MONGODB_URI`: Your MongoDB connection string
    - `JWT_SECRET`: Your secure JWT secret
    - `NODE_ENV`: Set to `production`
    - `FRONTEND_URL`: Your deployed frontend URL
-6. Set build command: `npm install`
-7. Set start command: `npm start`
-8. Click "Deploy"
+7. Set build command: `npm install`
+8. Set start command: `npm start`
+9. Click "Deploy"
 
 ### Deploy Frontend to Vercel
 

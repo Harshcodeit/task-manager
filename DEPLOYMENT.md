@@ -75,6 +75,7 @@ This guide will walk you through deploying the Task Manager app to production.
 5. Fill in the configuration:
    - **Name**: `task-manager-backend`
    - **Environment**: `Node`
+   - **Root Directory**: `backend`
    - **Build Command**: `npm install`
    - **Start Command**: `npm start`
    - **Region**: Choose closest to you

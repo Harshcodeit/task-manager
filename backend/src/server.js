@@ -12,9 +12,33 @@ dotenv.config();
 const app = express();
 
 // Middleware
+const getOrigin = (url) => {
+  if (!url) return null;
+  try {
+    return new URL(url).origin;
+  } catch (error) {
+    return url;
+  }
+};
+
+const allowedOrigins = [
+  getOrigin(process.env.FRONTEND_URL),
+  "https://task-manager-frontend-og8qhon9z-harshits-projects3.vercel.app",
+  "https://task-manager-frontend-cia97b7hg-harshits-projects3.vercel.app",
+].filter(Boolean);
+
 app.use(
   cors({
-    origin: process.env.FRONTEND_URL || "http://localhost:5173",
+    origin: (origin, callback) => {
+      if (!origin) return callback(null, true);
+      if (process.env.NODE_ENV === "production") {
+        if (allowedOrigins.includes(origin) || origin.endsWith(".vercel.app")) {
+          return callback(null, true);
+        }
+        return callback(new Error("Not allowed by CORS"), false);
+      }
+      return callback(null, true);
+    },
     credentials: true,
   }),
 );
