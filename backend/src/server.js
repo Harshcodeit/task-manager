@@ -23,7 +23,7 @@ const getOrigin = (url) => {
 
 const allowedOrigins = [
   getOrigin(process.env.FRONTEND_URL),
-  "https://task-manager-frontend-og8qhon9z-harshits-projects3.vercel.app",
+  "https://task-manager-frontend-delta-seven.vercel.app",
   "https://task-manager-frontend-cia97b7hg-harshits-projects3.vercel.app",
 ].filter(Boolean);
 

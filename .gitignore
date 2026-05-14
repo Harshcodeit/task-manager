@@ -19,6 +19,9 @@ yarn-error.log*
 dist/
 build/
 
+# Render files
+.render.*
+
 # Editor directories and files
 .vscode/
 .idea/
